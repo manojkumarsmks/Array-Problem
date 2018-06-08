@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/flipping-an-image/description/
+
 public class FlippingAnImage {
 	
 	public int[][] flipAndInvert(int[][] inputData) {
