@@ -1,13 +1,13 @@
-// https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
+// https://leetcode.com/problems/find-all-numbers-missing-in-an-array/description/
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FindAllDuplicates {
+public class FindMissingLetters {
 
 	public static void main(String[] args) {
 		int[] array = {4,3,2,7,8,2,3,1};
-		List<Integer> result = disappearedNumbers(array);
+		List<Integer> result = missingNumbers(array);
 		
 		//System.out.println(result.size());
 		for (Integer integer : result) {
@@ -18,7 +18,7 @@ public class FindAllDuplicates {
 	
 	// Space Complexity - O(n)
 	// Time Complexity - O(1)
-	public static List<Integer> findDisappearedNumbers(int[] nums) {
+	public static List<Integer> findMissingNumbers(int[] nums) {
 		
 		List<Integer> result = new ArrayList<Integer>();
 		
@@ -39,7 +39,7 @@ public class FindAllDuplicates {
 	
 	// Time Complexity - O(n)
 	// Space Complexity - O(1)
-	public static List<Integer> disappearedNumbers(int[] nums) {
+	public static List<Integer> missingNumbers(int[] nums) {
 		List<Integer> result = new ArrayList<Integer>();
 		
 		for (int i = 0; i < nums.length; i++) {
