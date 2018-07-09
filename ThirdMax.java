@@ -3,42 +3,40 @@ public class ThirdMax {
 
 	public static void main(String[] args) {
 		
-		int[] inputArray = {2, 2, 3, 1};
+		int[] inputArray = {1,2};
 		System.out.println(thirdMax(inputArray));
 
 	}
 
 	private static int thirdMax(int[] inputArray) {
-		int firstMax = Integer.MIN_VALUE, secondMax = Integer.MIN_VALUE, thirdMax = Integer.MIN_VALUE;
+		Integer firstMax = null, secondMax = null, thirdMax = null;
 		
-		loop: for (int i = 0; i < inputArray.length; i++) {
-			
-			if(inputArray[i] == firstMax || inputArray[i] == secondMax || inputArray[i] == thirdMax)
-				continue loop;
-			if(inputArray[i] > firstMax) {
-				thirdMax = secondMax;
-				secondMax = firstMax;
-				firstMax = inputArray[i];
-			}
-			else if(inputArray[i] > secondMax) {
-				thirdMax = secondMax;
-				secondMax = inputArray[i];
+		loop: for (Integer n:inputArray) {
+				
+				if(n.equals(firstMax)|| 
+						n.equals(secondMax) || 
+						n.equals(thirdMax))
+					continue loop;
+				if(firstMax == null || n > firstMax) {
+					thirdMax = secondMax;
+					secondMax = firstMax;
+					firstMax = n;
+				}
+				else if(secondMax == null || n > secondMax) {
+					thirdMax = secondMax;
+					secondMax = n;
+					
+				}
+				else if(thirdMax == null || n > thirdMax) {
+					thirdMax = n;
+				}
 				
 			}
-			else if(inputArray[i] > thirdMax) {
-				thirdMax = inputArray[i];
-			}
 			
-		}
-		
-		
-		if(firstMax != Integer.MIN_VALUE) {
+			if(thirdMax != null) {
+				return thirdMax;
+			}
 			return firstMax;
-		}
-		if(secondMax != Integer.MIN_VALUE) {
-			return secondMax;
-		}
-		return thirdMax;
 	}
 
 }
