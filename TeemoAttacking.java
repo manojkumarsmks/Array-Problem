@@ -2,11 +2,10 @@
 public class TeemoAttacking {
 
 	public static void main(String[] args) {
-		int[] timeSeries = {1};
+		int[] timeSeries = {1,4};
 		int duration = 2;
 		
-		System.out.println(timeSeries.length);
-		//System.out.println(findPoisonedDuration(timeSeries, duration));
+		System.out.println(findPoisonedDuration(timeSeries, duration));
 	}
 	
 	public static int findPoisonedDuration(int[] timeSeries, int duration) {
